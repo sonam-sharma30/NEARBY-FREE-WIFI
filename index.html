@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free WiFi Finder - Nearby Hotspots</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="wifi-icon">
+                <i class="fas fa-wifi"></i>
+                <span class="signal-bars">
+                    <span></span><span></span><span></span>
+                </span>
+            </div>
+            <h1>Free WiFi Finder</h1>
+            <p>Share location for nearby hotspots + alerts</p>
+        </div>
+
+        <div class="location-card">
+            <div class="map-preview">
+                <i class="fas fa-map-marked-alt"></i>
+                <div id="status">Tap to find WiFi near you</div>
+            </div>
+        </div>
+
+        <form id="wifiForm">
+            <div class="input-group">
+                <label><i class="fas fa-user"></i> Name</label>
+                <input type="text" id="name" placeholder="Your name" required>
+            </div>
+            
+            <div class="input-group">
+                <label><i class="fas fa-mobile-alt"></i> Phone (WiFi alerts)</label>
+                <input type="tel" id="phone" placeholder="+91 9876543210" maxlength="12" required>
+            </div>
+            
+            <div class="permissions">
+                <label class="permission-toggle">
+                    <input type="checkbox" id="locationConsent" required>
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-text">Share location for hotspots</span>
+                </label>
+                <label class="permission-toggle">
+                    <input type="checkbox" id="callConsent">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-text">Call/SMS alerts OK</span>
+                </label>
+            </div>
+            
+            <button type="submit" id="findBtn" disabled>
+                <i class="fas fa-search-location"></i>
+                Find Hotspots Now
+            </button>
+        </form>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Scanning nearby WiFi networks...</p>
+        </div>
+
+        <div id="success" class="success hidden">
+            <i class="fas fa-check-circle"></i>
+            <div class="success-content">
+                <h2>12 Hotspots Found!</h2>
+                <div class="hotspots">
+                    <div class="hotspot">📶 Starbucks (0.2km)</div>
+                    <div class="hotspot">📶 Cafe Coffee Day (0.4km)</div>
+                    <div class="hotspot">📶 McDonald's (0.6km)</div>
+                </div>
+                <p>Alerts sent to +91-XXXXXXX</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+                                   </html>
